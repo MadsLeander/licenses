@@ -91,5 +91,5 @@ Citizen.CreateThread(function()
 	AddTextEntry("licenses_driver_license_helptext", Config.Localization['hide_driver_license'])
 
 	exports('ShowToClosest', ShowToClosest)
-	exports('ShowToClosest', ShowToSelf)
+	exports('ShowToSelf', ShowToSelf)
 end)
