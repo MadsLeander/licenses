@@ -29,36 +29,36 @@ AddEventHandler('licenses:displayOnClient', function(data)
 end)
 
 local function GetPlayers()
-    local players = {}
-    for _, id in ipairs(GetActivePlayers()) do
-        if  ((NetworkIsPlayerActive(id)) and GetPlayerPed(id) ~= GetPlayerPed(-1)) then
-            table.insert(players, id)
-        end
-    end
-    return players
+	local players = {}
+	for _, id in ipairs(GetActivePlayers()) do
+		if  ((NetworkIsPlayerActive(id)) and GetPlayerPed(id) ~= GetPlayerPed(-1)) then
+			table.insert(players, id)
+		end
+	end
+	return players
 end
 
 local function GetClosestPlayer()
-    local players = GetPlayers()
-    local closestDistance = -1
-    local closestPlayer = -1
-    local ply = GetPlayerPed(-1)
-    local plyCoords = GetEntityCoords(ply, 0)
+	local players = GetPlayers()
+	local closestDistance = -1
+	local closestPlayer = -1
+	local ply = GetPlayerPed(-1)
+	local plyCoords = GetEntityCoords(ply, 0)
 
-    for k, v in ipairs(players) do
-        local target = GetPlayerPed(v)
-        if(target ~= ply) then
-            local targetCoords = GetEntityCoords(GetPlayerPed(v), 0)
-            local distance = #(targetCoords - plyCoords)
+	for k, v in ipairs(players) do
+		local target = GetPlayerPed(v)
+		if(target ~= ply) then
+			local targetCoords = GetEntityCoords(GetPlayerPed(v), 0)
+			local distance = #(targetCoords - plyCoords)
 			if (closestDistance == -1 or closestDistance > distance) then
 				if distance ~= 0.0 then
 					closestPlayer = v
 					closestDistance = distance
 				end
 			end
-        end
-    end
-    return closestPlayer, closestDistance
+		end
+	end
+	return closestPlayer, closestDistance
 end
 
 local function LoadAnimDict(dict)
@@ -85,7 +85,6 @@ end
 Citizen.CreateThread(function()
 	AddTextEntry("licenses_id_helptext", Config.Localization['hide_id'])
 	AddTextEntry("licenses_driver_license_helptext", Config.Localization['hide_driver_license'])
+
 	exports('ShowToClosest', ShowToClosest)
 end)
-
-
