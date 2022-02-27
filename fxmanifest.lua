@@ -9,10 +9,7 @@ client_scripts {
 	'client.lua'
 }
 
-server_scripts {
-	'config.lua',
-	'server.lua'
-}
+server_script 'server.lua'
 
 ui_page('html/index.html')
 
