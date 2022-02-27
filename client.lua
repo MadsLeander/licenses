@@ -82,9 +82,14 @@ local function ShowToClosest(data)
 	end
 end
 
+local function ShowToSelf(data)
+	TriggerEvent('licenses:displayOnClient', data)
+end
+
 Citizen.CreateThread(function()
 	AddTextEntry("licenses_id_helptext", Config.Localization['hide_id'])
 	AddTextEntry("licenses_driver_license_helptext", Config.Localization['hide_driver_license'])
 
 	exports('ShowToClosest', ShowToClosest)
+	exports('ShowToClosest', ShowToSelf)
 end)
