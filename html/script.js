@@ -16,7 +16,7 @@ function onMessageRecieved(event){
 		}
 
 		if (item.active) {
-			$("#id-card").show(); // fade in is in the css
+			$("#id-card").fadeIn(500);
 
 		} else if (!item.active) {
 			$("#id-card").fadeOut(500);

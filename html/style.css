@@ -25,19 +25,6 @@ p {
 	background: url("images/background.png"); /* This is the one you have to change to make the background different, set it to "../images/background2.png" to make it be the id version, the driver license is the default one. */
 	background-repeat: no-repeat;
 	display: none; /* This one needs to be sets to "display: block;" to display for it to show*/
-
-	/* Animation */
-	animation: fadeIn 1s;
-	opacity: 1;
-}
-
-@keyframes fadeIn {
-	from {
-		opacity: 0;
-	}
-	to {
-		opacity: 1;
-	}
 }
 
 img {
