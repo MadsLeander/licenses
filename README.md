@@ -1,15 +1,14 @@
 # Licenses
-Licenses is a small dev resource. The background images are based on the state of California driver licenses.
-The html/css is not responsive, but feel free to contribute if you decide to do it yourself.
+Licenses is a small dev resource. The background images are based on the state of California driver licenses. The html/css is not responsive, but feel free to contribute if you decide to do it yourself.
 
 # Usage
 ## Exports
-**ShowToClosest**
-Finds the closest player and shows them the license
+**ShowToClosest**  
+Finds the closest player and shows them the license  
 ```exports.licenses:ShowToClosest(data)```
 
-**ShowToSelf**
-Shows the player their own license
+**ShowToSelf**  
+Shows the player their own license  
 ```exports.licenses:ShowToSelf(data)```
 
 ## Events
@@ -17,7 +16,7 @@ Client:
 ```TriggerEvent('licenses:displayOnClient', data)```
 
 Server:
-```TriggerEvent('licenses:display', receiver, data)```
+```TriggerEvent('licenses:display', receiver, data)```  
 -This just triggers licenses:displayOnClient on the target client
 
 ## Data
@@ -55,8 +54,8 @@ exports.licenses:ShowToSelf({
 })
 ```
 
--- Something like this could be used if you have the license/id as an item in an inventory.
-exports.licenses:ShowToClosest(data.customData)
+Something like this could be used if you have the license/id as an item in an inventory:  
+```exports.licenses:ShowToClosest(data.customData)```
 
 ## Image
 Driver License
