@@ -27,7 +27,7 @@ p {
 	display: none; /* This one needs to be sets to "display: block;" to display for it to show*/
 }
 
-img {
+#image {
 	position: absolute;
 	left:22px;
 	top:56px;
