@@ -22,7 +22,8 @@ Server:
 
 # Data
 When executing a function you need the following data (this is an example showing required data):
-```local data = {
+```
+local data = {
     FirstName = "first name",
     LastName = "last name",
     DOB = "dateofbirth", -- 1997/10/02
@@ -34,10 +35,12 @@ When executing a function you need the following data (this is an example showin
     Eyes = "blue" -- eye colour
     Image = "images/placeholder.png", -- or alternativly images from online (like this one: https://i.imgur.com/R1TsPF8.png)
     Format = "id" --id/driver_license
-}```
+}
+```
 
 ## Example
-```exports.licenses:ShowToSelf({
+```
+exports.licenses:ShowToSelf({
     FirstName = "Robert",
     LastName = "Williams",
     DOB = "1997/10/02",
@@ -49,7 +52,8 @@ When executing a function you need the following data (this is an example showin
     Eyes = "blue"
     Image = "https://i.imgur.com/R1TsPF8.png",
     Format = "driver_license"
-})```
+})
+```
 
 -- Something like this could be used if you have the license/id as an item in an inventory.
 exports.licenses:ShowToClosest(data.customData)
