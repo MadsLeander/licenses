@@ -20,8 +20,8 @@ p {
 	position: relative;
 	margin-top: 65vh;
 	float: right;
-	width: 24vw; /*460px*/
-	height: 26.85vh; /*290px*/
+	width: 460px; /*24vw*/
+	height: 290px; /*26.85vh*/
 	background: url("images/background.png"); /* This is the one you have to change to make the background different, set it to "../images/background2.png" to make it be the id version, the driver license is the default one. */
 	background-repeat: no-repeat;
 	display: none; /* This one needs to be sets to "display: block;" to display for it to show*/
