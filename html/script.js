@@ -25,7 +25,7 @@ function onMessageRecieved(event){
 			$("#id-card").hide();
 		}
 
-		var data = item.data
+		let data = item.data
 		if (data !== undefined) {
 			if (data.Image !== undefined) {
 				$("#image").attr("src", data.Image);
