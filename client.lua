@@ -31,7 +31,7 @@ end)
 local function GetPlayers()
 	local players = {}
 	for _, id in ipairs(GetActivePlayers()) do
-		if  ((NetworkIsPlayerActive(id)) and GetPlayerPed(id) ~= GetPlayerPed(-1)) then
+		if ((NetworkIsPlayerActive(id)) and GetPlayerPed(id) ~= GetPlayerPed(-1)) then
 			table.insert(players, id)
 		end
 	end
@@ -47,7 +47,7 @@ local function GetClosestPlayer()
 
 	for k, v in ipairs(players) do
 		local target = GetPlayerPed(v)
-		if(target ~= ply) then
+		if (target ~= ply) then
 			local targetCoords = GetEntityCoords(GetPlayerPed(v), 0)
 			local distance = #(targetCoords - plyCoords)
 			if (closestDistance == -1 or closestDistance > distance) then
