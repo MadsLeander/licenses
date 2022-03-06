@@ -68,6 +68,15 @@ local function LoadAnimDict(dict)
 	end
 end
 
+local function DisplayNotification(blink, background, msg)
+	BeginTextCommandThefeedPost("STRING")
+	AddTextComponentSubstringPlayerName(msg)
+	if background then
+		ThefeedSetNextPostBackgroundColor(background)
+	end
+	EndTextCommandThefeedPostTicker(blink, false)
+end
+
 local function ShowToClosest(data)
 	local targetPlayer, dist = GetClosestPlayer()
 	if targetPlayer ~= -1 and dist < 2.0 then
@@ -75,9 +84,9 @@ local function ShowToClosest(data)
 		LoadAnimDict(Config.Animation.dict)
 		TaskPlayAnim(PlayerPedId(), Config.Animation.dict, Config.Animation.anim, 8.0, 8.0, 1500, 50, 0, false, false, false)
 		RemoveAnimDict(Config.Animation.dict)
-		exports.mythic_notify:SendAlert('success', Config.Localization['success_'..data.Format], 2500)
+		DisplayNotification(false, 0, Config.Localization['success_'..data.Format])
 	else
-		exports.mythic_notify:SendAlert('error', Config.Localization['fail_'..data.Format], 2500)
+		DisplayNotification(true, 6, Config.Localization['fail_'..data.Format])
 		return
 	end
 end
