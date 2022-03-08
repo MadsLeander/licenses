@@ -31,7 +31,7 @@ local data = {
     Sex = "Male", -- Male/Female or whatever you like.
     Hair = "brown",
     Height = "180cm", -- can be whatever unit of measurement
-    Eyes = "blue" -- eye colour
+    Eyes = "blue", -- eye colour
     Image = "images/placeholder.png", -- or alternativly images from online (like this one: https://i.imgur.com/R1TsPF8.png)
     Format = "id" --id/driver_license
 }
@@ -43,12 +43,12 @@ exports.licenses:ShowToSelf({
     FirstName = "Robert",
     LastName = "Williams",
     DOB = "1997/10/02",
-    Issue = 02/27/22",
+    Issue = "02/27/22",
     CitizenID = "26",
     Sex = "Male",
     Hair = "brown",
     Height = "180cm",
-    Eyes = "blue"
+    Eyes = "blue",
     Image = "https://i.imgur.com/R1TsPF8.png",
     Format = "driver_license"
 })
