@@ -1,33 +1,6 @@
 local active = true
 
-RegisterNetEvent('licenses:displayOnClient')
-AddEventHandler('licenses:displayOnClient', function(data)
-	active = true
-	local helpText = "licenses_"..data.Format.."_helptext"
-
-	SendNUIMessage({
-		type = 'licenses:MSG',
-		active = active,
-		data = data,
-		format = data.Format
-	});
-
-	Citizen.CreateThread(function()
-		while active do
-			if IsControlJustReleased(0, 194) then
-				active = false
-				SendNUIMessage({
-					type = 'licenses:MSG',
-					active = active
-				});
-			else
-				DisplayHelpTextThisFrame(helpText, false)
-			end
-			Citizen.Wait(0)
-		end
-	end)
-end)
-
+-- Functions --
 local function GetPlayers()
 	local players = {}
 	for _, id in ipairs(GetActivePlayers()) do
@@ -77,6 +50,33 @@ local function DisplayNotification(blink, background, msg)
 	EndTextCommandThefeedPostTicker(blink, false)
 end
 
+local function DisplayOnClient(data)
+	active = true
+	local helpText = "licenses_"..data.Format.."_helptext"
+
+	SendNUIMessage({
+		type = 'licenses:MSG',
+		active = active,
+		data = data,
+		format = data.Format
+	});
+
+	Citizen.CreateThread(function()
+		while active do
+			if IsControlJustReleased(0, 194) then
+				active = false
+				SendNUIMessage({
+					type = 'licenses:MSG',
+					active = active
+				});
+			else
+				DisplayHelpTextThisFrame(helpText, false)
+			end
+			Citizen.Wait(0)
+		end
+	end)
+end
+
 local function ShowToClosest(data)
 	local targetPlayer, dist = GetClosestPlayer()
 	if targetPlayer ~= -1 and dist < 2.0 then
@@ -91,14 +91,24 @@ local function ShowToClosest(data)
 	end
 end
 
-local function ShowToSelf(data)
-	TriggerEvent('licenses:displayOnClient', data)
-end
 
+-- Events --
+RegisterNetEvent('licenses:displayOnClient')
+AddEventHandler('licenses:displayOnClient', function(data)
+	DisplayOnClient(data)
+end)
+
+RegisterNetEvent('licenses:showToClosest')
+AddEventHandler('licenses:showToClosest', function(data)
+	ShowToClosest(data)
+end)
+
+
+-- Initialize --
 Citizen.CreateThread(function()
 	AddTextEntry("licenses_id_helptext", Config.Localization['hide_id'])
 	AddTextEntry("licenses_driver_license_helptext", Config.Localization['hide_driver_license'])
 
 	exports('ShowToClosest', ShowToClosest)
-	exports('ShowToSelf', ShowToSelf)
+	exports('DisplayOnClient', DisplayOnClient)
 end)
