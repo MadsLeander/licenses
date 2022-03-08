@@ -57,6 +57,8 @@ exports.licenses:ShowToSelf({
 Something like this could be used if you have the license/id as an item in an inventory:  
 ```exports.licenses:ShowToClosest(data.customData)```
 
+See the example file if you still have no clue.
+
 ## Image
 Driver License
 https://i.imgur.com/YdplMiw.png
