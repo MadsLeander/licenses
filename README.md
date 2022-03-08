@@ -1,5 +1,5 @@
 # Licenses
-Licenses is a small dev resource. The background images are based on the state of California driver licenses. The html/css is not responsive, but feel free to contribute if you decide to do it yourself.
+Licenses is a small dev resource. The background images are based on the state of California driver licenses. The html/css is not responsive, but feel free to contribute if you decide to fix it yourself.
 
 # Usage
 ## Exports
