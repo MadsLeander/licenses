@@ -84,7 +84,7 @@ local function ShowToClosest(data)
 		LoadAnimDict(Config.Animation.dict)
 		TaskPlayAnim(PlayerPedId(), Config.Animation.dict, Config.Animation.anim, 8.0, 8.0, 1500, 50, 0, false, false, false)
 		RemoveAnimDict(Config.Animation.dict)
-		DisplayNotification(false, 0, Config.Localization['success_'..data.Format])
+		DisplayNotification(false, false, Config.Localization['success_'..data.Format])
 	else
 		DisplayNotification(true, 6, Config.Localization['fail_'..data.Format])
 		return
