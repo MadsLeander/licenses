@@ -16,11 +16,11 @@ server_scripts {
 
 ui_page('html/index.html')
 
-files({
+files {
 	'html/index.html',
 	'html/script.js',
 	'html/style.css',
 	'html/images/*.png',
 	'html/fonts/franklingothicdemi/Franklin-Gothic-Demi-Regular.woff',
 	'html/fonts/justsignature/JustSignature.woff'
-})
+}
